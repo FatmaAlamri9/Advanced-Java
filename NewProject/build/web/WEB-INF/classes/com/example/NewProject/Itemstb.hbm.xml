@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 13, 2023 5:10:42 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.example.NewProject.Itemstb" table="ITEMSTB" schema="NEWPROJECT" optimistic-lock="version">
+        <id name="itemid" type="string">
+            <column name="ITEMID" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="itemname" type="string">
+            <column name="ITEMNAME" length="20" />
+        </property>
+        <property name="iteminfo" type="string">
+            <column name="ITEMINFO" length="50" />
+        </property>
+        <property name="itemprice" type="java.lang.Double">
+            <column name="ITEMPRICE" precision="52" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

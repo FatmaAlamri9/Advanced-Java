@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title> registration page</title>
+    </h:head>
+    <h:body style="background-color:powderblue; ">
+        <f:view>
+            <h:form style="background-color: wheat; ">
+                
+                <h1 style="font-style:italic"> Registration </h1>
+                <br></br>
+                <h:panelGrid columns="2">
+                
+                    UserName: <h:inputText value="#{myCustomer.name}" required="true" requiredMessage="please enter your user name"/>
+                                      
+<!--                       validatorMessage="UserName CHARACTERS must be more than 2 "
+                        <f:validateLongRange minimum="3"/>
+                    </h:inputText>     -->
+
+                
+                    Password: <h:inputText value="#{myCustomer.password}" required="true" requiredMessage="please enter your password"
+                                           validatorMessage="Passwors must start with a letter than 9 numbers EX:A123456789">
+                         <f:validateRegex pattern="[a-zA-Z]{1}[0-9]{9}"/>
+                    </h:inputText>
+ 
+                    Phone No:  <h:inputText value="#{myCustomer.phoneno}" required="true" requiredMessage="Please Enter your phone number" />
+                                     
+                               <!--        
+                                          validatorMessage="Phone number must start with 9 or 7"
+                                          <f:validateRegex pattern="[9-7]{1}[0-9]{9}"/>-->  
+
+                Gender:               
+                <h:selectOneRadio value="#{myCustomer.gender}" required="true"   requiredMessage="Please select your gender">
+                    
+                    <f:selectItem itemLabel="Female" itemValue="female"/>
+                    <f:selectItem itemLabel="Male" itemValue="male"/>
+                    
+                </h:selectOneRadio>
+                 
+                Country:
+                <h:selectOneMenu value="#{myCustomer.country}">
+                    <f:selectItem itemLabel="Oman" itemValue="Oman"/>
+                     <f:selectItem itemLabel="UAE" itemValue="UAE"/>
+                      <f:selectItem itemLabel="Bahrain" itemValue="Bahrain"/>
+                </h:selectOneMenu>
+                 
+               <h:commandButton value="save" action="#{myCustomer.savelog()}"/>
+               
+                  <h:commandButton value="Register" action="LoginPage"/>
+                  
+                </h:panelGrid>
+                
+                 <p:dock position="bottom">
+                      
+                    <p:menuitem value="back" icon="./images/back.png" url="http://localhost:8080/NewProject/faces/LoginPage.xhtml" />
+                             
+                </p:dock>
+                <h:messages/>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

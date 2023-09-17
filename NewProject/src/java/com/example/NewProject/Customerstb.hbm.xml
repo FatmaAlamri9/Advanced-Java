@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 13, 2023 5:10:42 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.example.NewProject.Customerstb" table="CUSTOMERSTB" schema="NEWPROJECT" optimistic-lock="version">
+        <id name="phoneno" type="int">
+            <column name="PHONENO" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="20" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="10" />
+        </property>
+        <property name="country" type="string">
+            <column name="COUNTRY" length="20" />
+        </property>
+        <property name="gender" type="string">
+            <column name="GENDER" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

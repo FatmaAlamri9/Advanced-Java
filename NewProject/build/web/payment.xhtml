@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title> payment page</title>
+    </h:head>
+    <h:body style=" background-color: powderblue;" >
+         <script>
+        function ConfirmationMessage()
+        {   
+            alert("Thank you, Your Order Will Arrive Within 24 hours");
+        }
+    </script>
+    
+        <f:view>
+            <h:form style="background-color: wheat;">
+                
+            Order No:  <h:outputText value="#{myitem.billNo()}"/>
+              <br></br> <br></br>
+  
+              
+            Total Amount :  <h:outputText value="#{myitem.totalAmount()}"/>
+                
+              
+                <br></br> <br></br>
+                Select Payment Method :
+                <h:commandButton value="Card" action="pay"/>
+                <br/>
+                <h:commandButton value="Cash" onclick="ConfirmationMessage()"/>
+
+                
+                <p:dock position="bottom"> 
+                    <p:menuitem value="back to shop"  icon="./images/icon.jpg.png" url="http://localhost:8080/NewProject/faces/CustomerPage.xhtml"  />
+                    <p:menuitem value="logout" icon="./images/logout.png" url="http://localhost:8080/NewProject/"  />
+                     
+                </p:dock>
+                  
+                  </h:form>
+
+        </f:view>
+    </h:body>
+</html>
+
