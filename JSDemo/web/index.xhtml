@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <script>
+            function showMessage(){
+                alert("welcome to Javasript");
+            }
+            
+            function showNameMeaage()
+            {
+                var x = document.getElementById("f1:t1").value;
+                alert("Welcome " + x);
+            }
+            function calculateSquare(){
+                var y = Number(document.getElementById("f1:t2").value);
+                alert("answer = "+(y*y));
+            } 
+            
+             function calculateMBISquare(){
+                var z = Number(document.getElementById("f1:t3").value);
+                var g= Number(document.getElementById("f1:t4").value);
+                alert("answer = "+(g/(z**2)));
+            }
+        </script>
+    </h:head>
+    <h:body><f:view>
+            <h:form id ="f1">
+                <h:commandButton value ="Display Message"
+                                 onclick="showMessage()"/>
+                <br/>
+                Enter your Name
+                <h:inputText id="t1" value="abc"/>
+                <h:commandButton value ="Welcome Message"
+                                 ondblclick="showNameMeaage()"/>
+                 <br/>
+                Enter a number
+                <h:inputText id="t2" value="1"/>
+                <h:commandButton value ="Display Square"
+                                 onclick="calculateSquare()"/> 
+                
+                <br/>
+                Enter H
+                <h:inputText id="t3" value="1"/> 
+                Enter w
+                <h:inputText id="t4" value="1"/>
+                <h:commandButton value ="Display Square"
+                                 onclick="calculateMBISquare()"/>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+
