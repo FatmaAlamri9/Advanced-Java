@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 15, 2023 5:14:45 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.example.empsystem.Employeetb" table="EMPLOYEETB" schema="ROOT" optimistic-lock="version">
+        <id name="eid" type="int">
+            <column name="EID" />
+            <generator class="assigned" />
+        </id>
+        <property name="ename" type="string">
+            <column name="ENAME" length="15" />
+        </property>
+        <property name="ebasic" type="java.lang.Double">
+            <column name="EBASIC" precision="52" scale="0" />
+        </property>
+        <property name="edepartment" type="string">
+            <column name="EDEPARTMENT" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>
