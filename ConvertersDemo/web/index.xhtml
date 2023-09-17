@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h2>JSF Converters Demo</h2> 
+                value of PI:
+                <h:outputText value="#{22/7}">
+                    
+                </h:outputText>
+                <br/>
+                 value of PI (formatted) :
+                <h:outputText value="#{22/7}">
+                    <f:convertNumber maxFractionDigits="3" minIntegerDigits="4"/> 
+                </h:outputText>
+                 <br/>
+                 value of Temp = <h:outputText value ="#{mybean.temValue}">
+                     <f:convertNumber pattern="#000000.0"/>
+                 </h:outputText>
+                 <br/>
+                 Net payment amount(in USD) = <h:outputText value = "#{100}">
+                     <f:convertNumber type="currency" currencyCode="USD"/>
+                 </h:outputText>
+                 <br/>
+                 Net payment amount(in OMR) = <h:outputText value = "#{100}">
+                     <f:convertNumber type="currency" currencyCode="OMR"/>
+                 </h:outputText>
+                 <br/>
+                 Student less than 10 marks :
+                 <h:outputText value="#{7/21}">
+                     <f:convertNumber type="percent" />
+                 </h:outputText>
+                 <br/>
+                 ----------------------------------------------------------
+                
+                  <br/>
+                 Last accessed date/Time
+                 <h:outputText value="#{session.lastAccessedTime}"/>
+                  <br/>
+                 Last accessed date/Time
+                 <h:outputText value="#{session.lastAccessedTime}">
+                     <f:convertDateTime type="date" dateStyle="short"/>
+                 </h:outputText>
+                 
+                 <br/>
+                 Last accessed date/Time
+                 <h:outputText value="#{session.lastAccessedTime}">
+                     <f:convertDateTime type="time" timeStyle="medium"  timeZone="GMT"/>
+                 </h:outputText>
+                 <br/>
+                 Show current date and time :
+                 <h:outputText value="#{mybean.date}"/>
+                 
+            </h:form>
+        </f:view>
+
+        
+    </h:body>
+</html>
+
