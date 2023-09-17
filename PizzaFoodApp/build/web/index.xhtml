@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Home Page</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                Customer Mobile No.
+                <h:inputText value="#{pizzabean.customerMobileNumber}">
+                    <f:validateRegex pattern="[7|9]{1}[0-9]{7}"/>  
+                </h:inputText>
+                Pizza Name
+                <h:inputText  value="#{pizzabean.pizzaName}"
+                      required="true"
+                      requiredMessage="Pls. enter name"
+                      validatorMessage="invalid name">
+                    <f:validateRegex pattern="16[S,s,J,j]{1}[0-9]*"/>
+                                      
+                </h:inputText>
+                
+                
+                <br/>
+                Pizza Quantity Required 
+                <h:inputText value="#{pizzabean.qtyRequired}"
+                         validatorMessage="invalid range">
+                
+                   
+                </h:inputText>
+                <br/>
+                Size:
+                <h:selectOneListbox value="#{pizzabean.pizzaSize}">
+                    <f:selectItem itemLabel="Small" itemValue="2.5"/>
+                    <f:selectItem itemLabel="Medium" itemValue="4.0"/>
+                    <f:selectItem itemLabel="Large" itemValue="8.5"/>
+                </h:selectOneListbox>
+                <br/>
+                <h:selectManyCheckbox value="#{pizzabean.pizzaExtra}">
+                    <f:selectItem itemLabel="Juice" itemValue="1.5"/>
+                    <f:selectItem itemLabel="Chips" itemValue="0.5"/>
+                    <f:selectItem itemLabel="Toys" itemValue="2.0"/>
+                </h:selectManyCheckbox>
+                <br/>
+                <h:commandButton value="Payment" action="ResultPage"/>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+
