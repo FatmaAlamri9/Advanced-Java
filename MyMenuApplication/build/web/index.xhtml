@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h2>Menu Demo .....</h2>
+                <p:menu>
+                    <p:menuitem value="Help Page" 
+                                action="HelpPage"/>
+                    <p:menuitem value="Registration Page"
+                                action="RegistrationPage"/>
+                    <p:menuitem value="Website"
+                                url="http://www.hct.edu.om"/>
+                    <p:submenu label="Sub Menu">
+                        <p:menuitem value="option 1"/>
+                        <p:menuitem value="option 2"/>
+                        <p:menuitem value="option 3"/>
+                        <p:menuitem value="option 4"/>
+                    </p:submenu>
+                </p:menu>
+                <br/><br/>
+                trigger menu  <br/>
+                <h:commandButton value="Click to display menu"
+                                 id="cmdb1"/>
+                <p:menu overlay="true"
+                        trigger="cmdb1"
+                        my="left top"
+                        at="right top">
+                       <p:menuitem value="option 1"/>
+                        <p:menuitem value="option 2"/>
+                        <p:menuitem value="option 3"/>
+                        <p:menuitem value="option 4"/>
+                </p:menu>
+                 <br/><br/>
+                 Context Menu  ... <br/>
+                 <p:contextMenu>
+                     <p:menuitem value="Cut"/>
+                     <p:menuitem value="Copy"/>
+                     <p:menuitem value="Paste"/>
+                     <p:menuitem value="Delete"/>
+                 </p:contextMenu>
+                 <br/><br/>
+                 Dock Menu .... <br/>
+                 <p:dock position="bottom">
+                     <p:menuitem value="Google"
+                                 icon="./images/google.png"
+                                 url="http://www.google.com"/>
+                     <p:menuitem value="Facebook"
+                                 icon="./images/facebook.png"
+                                 url="http://www.facebook.com"/>
+                     <p:menuitem value="Instagram"
+                                 icon="./images/instagram.png"
+                                 url="http://instagram.com"/>
+                     <p:menuitem value="IBM"
+                                 icon="./images/IBM.png"
+                                 url="http://www.IBM.com"/>
+                 </p:dock>
+                 
+                 <br/><br/>
+                 <p:breadCrumb >
+                     <p:menuitem value="Home" 
+                                 url="http://www.hct.edu.om"/>
+                     <p:menuitem value="IT Dept"
+                                 url="https://www.hct.edu.om/academic-departments/it-department"/>
+                     <p:menuitem value="Courses"
+                                 url="https://www.hct.edu.om/academic-departments/it-department/degree-audit"/>
+                 </p:breadCrumb>
+                
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+
