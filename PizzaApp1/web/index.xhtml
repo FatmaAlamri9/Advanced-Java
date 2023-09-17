@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Pizza Page</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                Pizza Name <h:inputText value="#{mybean.pizzaName}" 
+                                        required="true" 
+                                        requiredMessage="Pizza name is required"
+                                        validatorMessage="invalid name ...">
+                    <f:validateRegex pattern=""/>
+                   </h:inputText>
+                
+                <br/>
+                Customer Phone Number :
+                <h:inputText value="#{mybean.customerPhoneNumber}"
+                             validatorMessage="Invalid Customer Phone Number">
+                
+                    <f:validateRegex pattern="[9,7]{1}[0-9]{7}"/>
+                </h:inputText>
+                <br/>
+                Pizza Quantity <h:inputText value="#{mybean.qtyRequired}"
+                                            validatorMessage="Minimum is 2">
+                
+                    <f:validateLongRange minimum="2"/>
+                </h:inputText>
+                    
+                    
+                    <br/>
+                Size <h:selectOneRadio value="#{mybean.pizzaSize}">
+                    <f:selectItem itemLabel="Small" itemValue="2.5"/>
+                    <f:selectItem itemLabel="Medium" itemValue="4.0"/>
+                    <f:selectItem itemLabel="Large" itemValue="8.5"/>
+                </h:selectOneRadio> <br/>
+                Extra :
+                <h:selectManyCheckbox value="#{mybean.pizzaExtra}">
+                    <f:selectItem itemLabel="Extra Cheese" itemValue="1.5"/>
+                    <f:selectItem itemLabel="Chips" itemValue="0.5"/>
+                    <f:selectItem itemLabel="Toys" itemValue="2.0"/>
+                </h:selectManyCheckbox> <br/>
+                <h:commandButton value="Payment" action="ResultPage"/>
+
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

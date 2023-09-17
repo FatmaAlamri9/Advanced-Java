@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+<!--
+    
+    <navigation-rule>
+        <from-view-id>index.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{mybean.checkLogin()}</from-action>
+            <from-outcome>admin</from-outcome>
+            <to-view-id>AdminPage.xhtml</to-view-id>                
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{mybean.checkLogin()}</from-action>
+            <from-outcome>customer</from-outcome>
+            <to-view-id>CustomerPage.xhtml</to-view-id>                
+        </navigation-case>
+    </navigation-rule>-->
+    
+    <navigation-rule>
+         <from-view-id>index.xhtml</from-view-id>
+         <navigation-case>
+             <from-action>#{mybean.checkUserType()}</from-action>
+             <from-outcome>sucessful</from-outcome>
+             <if>#{mybean.userType =="emp"}</if>
+             <to-view-id>Page1.xhtml</to-view-id>                 
+         </navigation-case>
+         <navigation-case>
+             <from-action>#{mybean.checkUserType()}</from-action>
+             <from-outcome>sucessful</from-outcome>
+             <if>#{mybean.userType =="cust"}</if>
+             <to-view-id>CustomerPage.xhtml</to-view-id>                 
+         </navigation-case>
+         <navigation-case>
+             <from-action>#{mybean.checkUserType()}</from-action>
+             <from-outcome>sucessful</from-outcome>
+             <if>#{mybean.userType =="admin"}</if>
+             <to-view-id>AdminPage.xhtml</to-view-id>                 
+         </navigation-case>
+    </navigation-rule>
+</faces-config>
